@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import FormikField from "./components/FormikField";
+import { Button } from "@material-ui/core";
+import FormikSelect from "./components/FormikSelect/FormikSelect";
 
 const initialValues = {
   name: "",
@@ -36,12 +39,7 @@ const LoginForm = () => {
         {({ isValid, dirty }) => {
           return (
             <Form>
-              <div>
-                <label htmlFor="">Name:</label>
-                <Field autoComplete="off" name="name" type="input" />
-                <ErrorMessage name="name" />
-              </div>
-
+              <FormikField label="Name" name="name" />
               <div>
                 <label htmlFor="">Position: </label>
                 <Field name="position" as="select">
@@ -53,9 +51,15 @@ const LoginForm = () => {
                 </Field>
                 <ErrorMessage name="position" />
               </div>
-              <button disabled={!dirty || !isValid} type="submit">
+              <FormikSelect />
+              <Button
+                type="submit"
+                disabled={!dirty || !isValid}
+                variant="contained"
+                color="primary"
+              >
                 Submit
-              </button>
+              </Button>
             </Form>
           );
         }}
