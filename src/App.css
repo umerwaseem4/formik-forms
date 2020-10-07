@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #20222a;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  background: #fff;
+  border-radius: 10px;
+  width: 500px;
+  padding: 50px;
+}
